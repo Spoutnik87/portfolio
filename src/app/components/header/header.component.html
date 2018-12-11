@@ -1,0 +1,84 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink="/presentation">Vladyslav</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbar"
+      aria-controls="navbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/presentation"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Présentation <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/cursus"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Cursus scolaire</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/competences"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Compétences</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/experience"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Experience professionnelle</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/projets"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Mes projets</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/langues"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Langues et centres d'interets</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/interets"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Centres d'interets</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
