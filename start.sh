@@ -10,7 +10,7 @@ sleep 3
 
 RESTART=$(pm2 -m ls | grep "\-\- $APPLICATION_NAME" -A 6 | grep "restarted" | egrep -o "[0-9]+$")
 
-pm2 logs $APPLICATION_NAME --nostream
+pm2 logs $APPLICATION_NAME --nostream --lines 200
 if [ "$RESTART" -eq 0 ]; then
   echo "Application $APPLICATION_NAME is running."
   exit 0
