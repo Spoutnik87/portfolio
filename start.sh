@@ -1,16 +1,20 @@
 #/bin/bash
 
-exec -a cv_angular node dist/app/server/main.js &
+APPLICATION_NAME="cv_angular"
 
-PID=$!
+# Start the application
+pm2 start dist/app/server/main.js --name $APPLICATION_NAME
 
-sleep 2
+# Check if application is running
+sleep 3
 
-if ps -p $PID > /dev/null; then
-  echo "Server is running."
-  exit 0
+RESTART=$(pm2 -m ls | grep "\-\- $APPLICATION_NAME" -A 6 | grep "restarted" | grep -oP "\d+$")
+
+if [ "$RESTART" -ne 0 ]; then
+  echo "Application $APPLICATION_NAME is not running."
+  pm2 delete $APPLICATION_NAME
+  exit 1
 else
-  echo "Server is not running."
-  wait $PID
-  exit $?
+  echo "Application $APPLICATION_NAME is running."
+  exit 0
 fi
