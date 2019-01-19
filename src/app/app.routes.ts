@@ -1,5 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { CommonModule } from "@angular/common";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 import { AppComponent } from "./app.component";
 import { NotFoundComponent } from "./not-found.component";
@@ -13,6 +15,8 @@ import { HeaderComponent } from "./components/header/header.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { InteretsComponent } from "./components/interets/interets.component";
 import { ProjetsComponent } from "./components/projets/projets.component";
+import { SidebarComponent } from "./components/sidebar/sidebar.component";
+import { AProposComponent } from "./components/apropros/apropros.component";
 
 const routes: Routes = [
   {
@@ -47,6 +51,10 @@ const routes: Routes = [
     path: "langues",
     component: LanguesComponent
   },
+  {
+    path: "apropos",
+    component: AProposComponent
+  },
   { path: "**", component: NotFoundComponent }
 ];
 
@@ -63,9 +71,12 @@ const routes: Routes = [
     FooterComponent,
     InteretsComponent,
     ProjetsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SidebarComponent,
+    AProposComponent,
+    Chip8Component
   ],
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), CommonModule, FontAwesomeModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

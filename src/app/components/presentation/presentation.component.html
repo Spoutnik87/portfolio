@@ -2,7 +2,6 @@
   <div class="row">
     <div class="col-sm-12 col-lg-7">
       <div class="media">
-        <img class="mr-3" src="https://via.placeholder.com/150x150" />
         <div class="media-body">
           <h2 class="mt-0">Développeur web</h2>
           Actuellement étudiant à l'école d'ingénieur informatique de Limoges,
@@ -17,20 +16,22 @@
       <div class="card">
         <div class="card-body">
           <div class="row">
-            <div class="col-sm-6">
-              <i class="fas fa-mobile-alt"></i> 06.10.03.06.86
-            </div>
-            <div class="col-sm-6">
-              <i class="far fa-envelope"></i> vladkyry@gmail.com
+            <div class="col-sm-12">
+              <fa-icon [icon]="faLinkedin"></fa-icon>
+              <a
+                href="https://www.linkedin.com/in/vladyslav-kyrylyshyn-657862118/"
+              >
+                LinkedIn</a
+              >
             </div>
           </div>
           <hr />
           <div class="row">
             <div class="col-sm-6">
-              <i class="fas fa-map-marker-alt"></i> Feytiat
+              <fa-icon [icon]="faMapMarkerAlt"></fa-icon> Limoges
             </div>
             <div class="col-sm-6">
-              <i class="fab fa-github"></i>
+              <fa-icon [icon]="faGithub"></fa-icon>
               <a href="https://github.com/Spoutnik87">Compte Github</a>
             </div>
           </div>

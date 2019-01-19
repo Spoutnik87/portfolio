@@ -5,7 +5,7 @@ import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app.routes";
 import { AppComponent } from "./app.component";
 
-export const APP_ID = "cv_angular";
+export const APP_ID = "portfolio";
 
 @NgModule({
   imports: [
