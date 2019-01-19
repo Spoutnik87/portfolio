@@ -87,7 +87,5 @@ export class AppComponent implements OnInit {
         this.sidebarState = "B";
       }
     }
-    console.log(this.sidebarState);
-    // this.sidebarState = !this.sidebarState;
   }
 }

@@ -54,18 +54,12 @@ export class Chip8 {
     let currentTime = Date.now();
     let lastTime = 0;
     const targetElapsedTime60Hz = 1000 / 60;
-    const targetElapsedTime = 20;
-    // this.loop();
 
     while (this.running) {
       currentTime = Date.now() - startTime;
-      // console.log("currentTime " + currentTime);
       let elapsedTime = currentTime - lastTime;
-      // console.log("elapsedTime " + elapsedTime);
 
       while (elapsedTime >= targetElapsedTime60Hz) {
-        // console.log("elapsedTime " + elapsedTime);
-        // console.log("targetElapsedTime60Hz " + targetElapsedTime60Hz);
         this.processor.tick60Hz();
         if (this.screen.isUpdateNeeded()) {
           this.updateScreen();
@@ -79,23 +73,6 @@ export class Chip8 {
       await sleep(this.targetElapsedTime);
     }
   }
-
-  /*public loop() {
-    this.currentTime = Date.now() - this.startTime;
-    let elapsedTime = this.currentTime - this.lastTime;
-
-    while (elapsedTime >= this.targetElapsedTime60Hz) {
-      this.processor.tick60Hz();
-      this.updateScreen();
-      elapsedTime -= this.targetElapsedTime60Hz;
-      this.lastTime += this.targetElapsedTime60Hz;
-    }
-
-    this.processor.tick();
-    if (this.running) {
-      setInterval(this.loop, this.targetElapsedTime);
-    }
-  }*/
 
   public updateScreen() {
     const scale = 8;

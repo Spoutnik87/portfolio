@@ -58,7 +58,6 @@ export class Chip8Component implements AfterViewInit, OnDestroy {
     if (this.chip8 == null && this.program != null) {
       this.chip8 = new Chip8(this.context);
       (() => {
-        console.log(this.program.get(0));
         this.chip8.start(this.program);
       })();
     }

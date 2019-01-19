@@ -11,8 +11,6 @@ import { CompetencesComponent } from "./components/competences/competences.compo
 import { LanguesComponent } from "./components/langues/langues.component";
 import { ExperienceComponent } from "./components/experience/experience.component";
 import { Chip8Component } from "./components/chip8/chip8.component";
-import { HeaderComponent } from "./components/header/header.component";
-import { FooterComponent } from "./components/footer/footer.component";
 import { InteretsComponent } from "./components/interets/interets.component";
 import { ProjetsComponent } from "./components/projets/projets.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
@@ -67,8 +65,6 @@ const routes: Routes = [
     LanguesComponent,
     ExperienceComponent,
     Chip8Component,
-    HeaderComponent,
-    FooterComponent,
     InteretsComponent,
     ProjetsComponent,
     NotFoundComponent,

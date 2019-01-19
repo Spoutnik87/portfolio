@@ -50,9 +50,6 @@ export class Chip8Processor {
   }
 
   public processOpCode(opCode: Chip8OpCode): void {
-    // console.log(opCode.getType());
-    console.log(opCode.getOpCode().toString(16));
-
     this.programCounter += 2;
     switch (opCode.getType()) {
       case Chip8OpCodeType.CLS:
