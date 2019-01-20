@@ -63,6 +63,8 @@ export class AppComponent implements OnInit {
     } else {
       if (this.sidebarState === "A") {
         this.sidebarState = "B";
+      } else if (this.sidebarState === "C" && firstInit) {
+        this.sidebarState = "B";
       }
     }
   }
