@@ -5,7 +5,6 @@ import {
   faTasks,
   faBriefcase,
   faCode,
-  faPaperPlane,
   faQuestion
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -20,7 +19,6 @@ export class SidebarComponent {
   faTasks = faTasks;
   faBriefcase = faBriefcase;
   faCode = faCode;
-  faPaperPlane = faPaperPlane;
   faQuestion = faQuestion;
 
   /**

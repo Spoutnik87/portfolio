@@ -83,7 +83,7 @@ export class Chip8 {
         if (this.screen.get(x, y)) {
           this.context.fillStyle = "#000000";
         } else {
-          this.context.fillStyle = "#D3D3D3";
+          this.context.fillStyle = "#808080";
         }
         this.context.fillRect(x * scale, y * scale, scale, scale);
       }

@@ -8,10 +8,8 @@ import { NotFoundComponent } from "./not-found.component";
 import { PresentationComponent } from "./components/presentation/presentation.component";
 import { CursusComponent } from "./components/cursus/cursus.component";
 import { CompetencesComponent } from "./components/competences/competences.component";
-import { LanguesComponent } from "./components/langues/langues.component";
 import { ExperienceComponent } from "./components/experience/experience.component";
 import { Chip8Component } from "./components/chip8/chip8.component";
-import { InteretsComponent } from "./components/interets/interets.component";
 import { ProjetsComponent } from "./components/projets/projets.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { AProposComponent } from "./components/apropros/apropros.component";
@@ -19,7 +17,6 @@ import { ProgressBarComponent } from "./components/progress-bar/progress-bar.com
 import { TechnologyComponent } from "./components/technology/tehnology.component";
 import { TechnologiesComponent } from "./components/technologies/technologies.component";
 import { ProjetComponent } from "./components/projet/projet.component";
-import { CardComponent } from "./components/card/card.component";
 
 const routes: Routes = [
   {
@@ -47,12 +44,8 @@ const routes: Routes = [
     component: ProjetsComponent
   },
   {
-    path: "interets",
-    component: InteretsComponent
-  },
-  {
-    path: "langues",
-    component: LanguesComponent
+    path: "chip8",
+    component: Chip8Component
   },
   {
     path: "apropos",
@@ -67,10 +60,8 @@ const routes: Routes = [
     PresentationComponent,
     CursusComponent,
     CompetencesComponent,
-    LanguesComponent,
     ExperienceComponent,
     Chip8Component,
-    InteretsComponent,
     ProjetsComponent,
     NotFoundComponent,
     SidebarComponent,
@@ -79,8 +70,7 @@ const routes: Routes = [
     ProgressBarComponent,
     TechnologyComponent,
     TechnologiesComponent,
-    ProjetComponent,
-    CardComponent
+    ProjetComponent
   ],
   imports: [RouterModule.forRoot(routes), CommonModule, FontAwesomeModule],
   exports: [RouterModule]

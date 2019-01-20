@@ -57,7 +57,7 @@
         [routerLinkActiveOptions]="{ exact: true }"
       >
         <fa-icon [icon]="faBriefcase" [size]="state !== 'A' && '2x'"></fa-icon
-        ><span *ngIf="state === 'A'">Experience professionnelle</span>
+        ><span *ngIf="state === 'A'">Expérience professionnelle</span>
       </a>
     </li>
     <li>
@@ -68,16 +68,6 @@
       >
         <fa-icon [icon]="faCode" [size]="state !== 'A' && '2x'"></fa-icon
         ><span *ngIf="state === 'A'">Mes projets</span>
-      </a>
-    </li>
-    <li>
-      <a
-        routerLink="/langues"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-      >
-        <fa-icon [icon]="faPaperPlane" [size]="state !== 'A' && '2x'"></fa-icon
-        ><span *ngIf="state === 'A'">Langues et centres d'interets</span>
       </a>
     </li>
     <li>

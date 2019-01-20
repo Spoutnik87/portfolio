@@ -9,6 +9,8 @@ import {
 import { isPlatformBrowser } from "@angular/common";
 import { Chip8 } from "src/app/chip8/Chip8";
 import { Chip8Program } from "src/app/chip8/Chip8Program";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
+import { ConfigService } from "src/app/services";
 
 @Component({
   selector: "app-chip8",
@@ -16,6 +18,7 @@ import { Chip8Program } from "src/app/chip8/Chip8Program";
   styleUrls: ["./chip8.component.css"]
 })
 export class Chip8Component implements AfterViewInit, OnDestroy {
+  faCode = faCode;
   isBrowser: boolean;
 
   @ViewChild("screen")
@@ -28,7 +31,10 @@ export class Chip8Component implements AfterViewInit, OnDestroy {
   chip8: Chip8;
   program: Chip8Program;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private configService: ConfigService
+  ) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
@@ -39,7 +45,11 @@ export class Chip8Component implements AfterViewInit, OnDestroy {
       this.screenInitialized = true;
 
       const xhr = new XMLHttpRequest();
-      xhr.open("GET", "http://127.0.0.1:4000/assets/Pong.ch8", true);
+      xhr.open(
+        "GET",
+        this.configService.getUrl() + "/assets/Chip8 Picture.ch8",
+        true
+      );
       xhr.responseType = "arraybuffer";
       xhr.onload = () => {
         this.program = new Chip8Program(new Uint8Array(xhr.response));
