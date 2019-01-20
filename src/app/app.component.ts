@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
   faAngleDoubleRight = faAngleDoubleRight;
   faAngleDoubleLeft = faAngleDoubleLeft;
 
-  sidebarState = "A";
+  sidebarState = "C";
 
   innerWidth;
 
@@ -35,33 +35,35 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     if (this.isBrowser) {
       this.innerWidth = window.innerWidth;
+      setTimeout(() => {
+        this.refreshSidebar(true);
+      }, 500);
     } else {
       this.innerWidth = 0;
-    }
-    if (this.innerWidth > 768) {
-      if (this.sidebarState === "C") {
-        this.sidebarState = "B";
-      } else if (this.sidebarState === "B") {
-        this.sidebarState = "A";
-      }
-    } else {
-      if (this.sidebarState === "A") {
-        this.sidebarState = "B";
-      }
     }
   }
 
   @HostListener("window:resize")
   onResize() {
     this.innerWidth = window.innerWidth;
+    this.refreshSidebar();
+  }
+
+  refreshSidebar(firstInit: boolean = false) {
     if (this.innerWidth > 768) {
       if (this.sidebarState === "C") {
-        this.sidebarState = "B";
+        if (firstInit) {
+          this.sidebarState = "A";
+        } else {
+          this.sidebarState = "B";
+        }
       } else if (this.sidebarState === "B") {
         this.sidebarState = "A";
       }
     } else {
       if (this.sidebarState === "A") {
+        this.sidebarState = "B";
+      } else if (this.sidebarState === "C" && firstInit) {
         this.sidebarState = "B";
       }
     }
