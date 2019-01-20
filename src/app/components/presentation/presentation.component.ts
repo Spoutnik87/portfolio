@@ -1,6 +1,10 @@
 import { Component } from "@angular/core";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUserAlt,
+  faMapMarkerAlt,
+  faEnvelope
+} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "app-presentation",
@@ -11,4 +15,6 @@ export class PresentationComponent {
   faLinkedin = faLinkedin;
   faMapMarkerAlt = faMapMarkerAlt;
   faGithub = faGithub;
+  faUserAlt = faUserAlt;
+  faEnvelope = faEnvelope;
 }

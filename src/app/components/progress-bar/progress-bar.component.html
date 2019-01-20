@@ -1,0 +1,12 @@
+<div class="progress">
+  <div
+    class="progress-bar progress-bar-striped progress-bar-animated font-weight-bold"
+    role="progressbar"
+    [ngStyle]="{ width: value + '%' }"
+    [class.bg-success]="value > 66"
+    [class.bg-warning]="value > 33 && value <= 66"
+    [class.bg-danger]="value <= 33"
+  >
+    {{ title }}
+  </div>
+</div>

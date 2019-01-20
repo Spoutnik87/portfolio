@@ -2,7 +2,7 @@ import { Component, Input } from "@angular/core";
 import {
   faUserAlt,
   faGraduationCap,
-  faBookOpen,
+  faTasks,
   faBriefcase,
   faCode,
   faPaperPlane,
@@ -17,12 +17,17 @@ import {
 export class SidebarComponent {
   faUserAlt = faUserAlt;
   faGraduationCap = faGraduationCap;
-  faBookOpen = faBookOpen;
+  faTasks = faTasks;
   faBriefcase = faBriefcase;
   faCode = faCode;
   faPaperPlane = faPaperPlane;
   faQuestion = faQuestion;
 
+  /**
+   * State A : Full sidebar
+   * State B : Minimal sidebar
+   * State C : Hidden sidebar
+   */
   @Input()
   state: string;
 

@@ -15,6 +15,11 @@ import { InteretsComponent } from "./components/interets/interets.component";
 import { ProjetsComponent } from "./components/projets/projets.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { AProposComponent } from "./components/apropros/apropros.component";
+import { ProgressBarComponent } from "./components/progress-bar/progress-bar.component";
+import { TechnologyComponent } from "./components/technology/tehnology.component";
+import { TechnologiesComponent } from "./components/technologies/technologies.component";
+import { ProjetComponent } from "./components/projet/projet.component";
+import { CardComponent } from "./components/card/card.component";
 
 const routes: Routes = [
   {
@@ -70,7 +75,12 @@ const routes: Routes = [
     NotFoundComponent,
     SidebarComponent,
     AProposComponent,
-    Chip8Component
+    Chip8Component,
+    ProgressBarComponent,
+    TechnologyComponent,
+    TechnologiesComponent,
+    ProjetComponent,
+    CardComponent
   ],
   imports: [RouterModule.forRoot(routes), CommonModule, FontAwesomeModule],
   exports: [RouterModule]

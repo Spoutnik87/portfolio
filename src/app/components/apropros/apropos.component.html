@@ -1,8 +1,33 @@
 <div class="container">
-  <span
-    >Déployé grâce à <a href="https://jenkins.spout.cc/">Jenkins</a> <br /><a
-      href="https://github.com/Spoutnik87/portfolio   "
-      >Accéder au code source</a
-    ></span
-  >
+  <div class="card">
+    <h2 class="card-header">
+      <fa-icon [icon]="faQuestion"></fa-icon> A propos
+    </h2>
+    <div class="card-body">
+      <div>Ce site est mon portfolio, il est distribué sous licence GPLv3.</div>
+
+      <div>
+        Le dépôt du projet est accessible au lien suivant :
+        <a href="https://github.com/Spoutnik87/portfolio   "
+          >Accéder au code source</a
+        >
+      </div>
+      <div>
+        Ce portfolio a été développé à l'aide des technologies :
+        <div class="ml-3">
+          <app-technologies [names]="technologies"></app-technologies>
+        </div>
+      </div>
+      <div>
+        Ce portfolio a été deployé à l'aide des technologies :
+        <div class="ml-3">
+          <app-technologies [names]="technologiesDepl"></app-technologies>
+        </div>
+        <div *ngIf="infoExists">
+          Ce build est le numéro {{ buildNumber }} et a eu lieu le
+          {{ buildDate }}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

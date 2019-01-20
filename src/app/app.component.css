@@ -15,16 +15,3 @@ div {
   transition: all 0.3s;
   background-color: #d3d3d3;
 }
-
-.button {
-  background-color: #343a40;
-  border: none;
-}
-
-.button:hover {
-  background-color: #2e3439;
-}
-
-.button:active {
-  background-color: #292e33;
-}
