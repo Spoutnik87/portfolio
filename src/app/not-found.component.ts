@@ -15,7 +15,8 @@ interface PartialResponse {
 
 @Component({
   selector: "app-not-found",
-  template: "<h1>Page Not Found</h1>"
+  template:
+    "<div class='container'><h1>La page que vous avez demandée n'existe pas</h1></div>"
 })
 export class NotFoundComponent implements OnInit {
   constructor(

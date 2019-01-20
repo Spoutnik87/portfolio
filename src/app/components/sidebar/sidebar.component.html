@@ -1,0 +1,84 @@
+<nav
+  class="sidebar"
+  [class.sidebar-small]="state !== 'A'"
+  [class.sidebar-small-hidden]="state === 'C'"
+  [class.sidebar-small-visible]="state === 'B'"
+>
+  <div class="sidebar-header text-center">
+    <img
+      *ngIf="state === 'A'"
+      class="mr-3 sidebar-image"
+      src="assets/vlad.jpg"
+    />
+    <h4 *ngIf="state === 'A'" [class.d-none]="state === 'C'">
+      Vladyslav Kyrylyshyn
+    </h4>
+    <strong *ngIf="state !== 'A'">VK</strong>
+  </div>
+
+  <ul class="list-unstyled components">
+    <li>
+      <a
+        routerLink="/presentation"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <fa-icon [icon]="faUserAlt" [size]="state !== 'A' && '2x'"></fa-icon
+        ><span *ngIf="state === 'A'">Présentation</span>
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/cursus"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <fa-icon
+          [icon]="faGraduationCap"
+          [size]="state !== 'A' && '2x'"
+        ></fa-icon
+        ><span *ngIf="state === 'A'">Cursus scolaire</span>
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/competences"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <fa-icon [icon]="faTasks" [size]="state !== 'A' && '2x'"></fa-icon
+        ><span *ngIf="state === 'A'">Compétences</span>
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/experience"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <fa-icon [icon]="faBriefcase" [size]="state !== 'A' && '2x'"></fa-icon
+        ><span *ngIf="state === 'A'">Expérience professionnelle</span>
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/projets"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <fa-icon [icon]="faCode" [size]="state !== 'A' && '2x'"></fa-icon
+        ><span *ngIf="state === 'A'">Mes projets</span>
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/apropos"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <fa-icon [icon]="faQuestion" [size]="state !== 'A' && '2x'"></fa-icon
+        ><span *ngIf="state === 'A'">A propos</span>
+      </a>
+    </li>
+  </ul>
+</nav>

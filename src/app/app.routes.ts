@@ -1,18 +1,22 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { CommonModule } from "@angular/common";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 import { AppComponent } from "./app.component";
 import { NotFoundComponent } from "./not-found.component";
 import { PresentationComponent } from "./components/presentation/presentation.component";
 import { CursusComponent } from "./components/cursus/cursus.component";
 import { CompetencesComponent } from "./components/competences/competences.component";
-import { LanguesComponent } from "./components/langues/langues.component";
 import { ExperienceComponent } from "./components/experience/experience.component";
 import { Chip8Component } from "./components/chip8/chip8.component";
-import { HeaderComponent } from "./components/header/header.component";
-import { FooterComponent } from "./components/footer/footer.component";
-import { InteretsComponent } from "./components/interets/interets.component";
 import { ProjetsComponent } from "./components/projets/projets.component";
+import { SidebarComponent } from "./components/sidebar/sidebar.component";
+import { AProposComponent } from "./components/apropros/apropros.component";
+import { ProgressBarComponent } from "./components/progress-bar/progress-bar.component";
+import { TechnologyComponent } from "./components/technology/tehnology.component";
+import { TechnologiesComponent } from "./components/technologies/technologies.component";
+import { ProjetComponent } from "./components/projet/projet.component";
 
 const routes: Routes = [
   {
@@ -40,12 +44,12 @@ const routes: Routes = [
     component: ProjetsComponent
   },
   {
-    path: "interets",
-    component: InteretsComponent
+    path: "chip8",
+    component: Chip8Component
   },
   {
-    path: "langues",
-    component: LanguesComponent
+    path: "apropos",
+    component: AProposComponent
   },
   { path: "**", component: NotFoundComponent }
 ];
@@ -56,16 +60,19 @@ const routes: Routes = [
     PresentationComponent,
     CursusComponent,
     CompetencesComponent,
-    LanguesComponent,
     ExperienceComponent,
     Chip8Component,
-    HeaderComponent,
-    FooterComponent,
-    InteretsComponent,
     ProjetsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SidebarComponent,
+    AProposComponent,
+    Chip8Component,
+    ProgressBarComponent,
+    TechnologyComponent,
+    TechnologiesComponent,
+    ProjetComponent
   ],
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), CommonModule, FontAwesomeModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

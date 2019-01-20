@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="card">
+    <h2 class="card-header"><fa-icon [icon]="faCode"></fa-icon> Mes projets</h2>
+    <br />
+    <div class="card-body">
+      <app-projet
+        title="Application de growth hacking"
+        [technologies]="['react', 'nodejs', 'html', 'css', 'mongodb', 'docker']"
+        >Une application de growth hacking est une application qui permet
+        d'accroitre la visibilité d'une entreprise sur les réseaux sociaux. Ce
+        projet se concentre sur Twitter et offre la possibilité aux utilisateurs
+        d'automatiser le fonctionnement de leurs compte Twitter en fonction de
+        paramètres prédéfinis. (exemple : retweet des messages contenant le mot
+        "croissance"). Techniquement, ce projet est composé de 3 modules :
+        <br />- Une application web permettant à l'utilisateur de configurer le
+        comportement du compte. <br />
+        - Un module interpretant la configuration et communiquant avec l'API de
+        Twitter pour effectuer des actions. (tweet, retweet, favoris...) <br />-
+        Une API REST servant d'interface entre les deux autres modules et la
+        base de données. <br />
+        Afin de faciliter la mise en production, l'orchestration de ces
+        différents modules est effectué à l'aide de Docker. <br />Actuellement,
+        ce projet n'est pas en production, cependant une demo sera bientôt
+        disponible.
+        <div class="mt-2">
+          <button class="btn btn-dark font-weight-bold float-right" disabled>
+            <fa-icon [icon]="faArrowAltCircleRight"></fa-icon> Voir
+          </button>
+        </div>
+      </app-projet>
+      <app-projet
+        title="Site d'enchère"
+        [technologies]="['php', 'html', 'css', 'javascript', 'mysql']"
+        >Site d'enchère permettant la vente de pigeons voyageurs.
+        <div class="mt-2">
+          <button
+            class="btn btn-dark font-weight-bold float-right"
+            (click)="redirectToEnchere()"
+          >
+            <fa-icon [icon]="faArrowAltCircleRight"></fa-icon> Voir
+          </button>
+        </div>
+      </app-projet>
+      <app-projet
+        title="Emulateur Chip8"
+        [technologies]="['angular', 'nodejs', 'html', 'css']"
+        >Chip8 est un langage de programmation interprété. Ce projet avait pour
+        but de réaliser un émulateur pour ce langage en Javascript.
+        <div class="mt-2">
+          <button
+            class="btn btn-dark font-weight-bold float-right"
+            (click)="redirectToChip8()"
+          >
+            <fa-icon [icon]="faArrowAltCircleRight"></fa-icon> Voir
+          </button>
+        </div></app-projet
+      >
+    </div>
+  </div>
+  <hr />
+</div>

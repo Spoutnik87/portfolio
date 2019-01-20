@@ -1,0 +1,11 @@
+.icon {
+  max-width: 35px;
+  width: 35px;
+  display: inline-block;
+}
+
+.text {
+  padding-left: 10px;
+  border-left: 2px solid #293133;
+  font-weight: bold;
+}

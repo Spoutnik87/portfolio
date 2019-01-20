@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="card">
+    <h2 class="card-header">
+      <fa-icon [icon]="faCode"></fa-icon> Emulateur Chip8
+    </h2>
+    <div class="card-body">
+      <div class="text-center">
+        <button class="btn btn-dark mr-2" (click)="startEmulator()">
+          Démarrer l'émulateur
+        </button>
+        <button class="btn btn-dark ml-2" (click)="stopEmulator()">
+          Arrêter l'émulateur
+        </button>
+        <br />
+        <br />
+        <canvas #screen width="512" height="256"></canvas> <br />
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>
