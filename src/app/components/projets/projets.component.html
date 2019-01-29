@@ -21,39 +21,31 @@
         différents modules est effectué à l'aide de Docker. <br />Actuellement,
         ce projet n'est pas en production, cependant une demo sera bientôt
         disponible.
-        <div class="mt-2">
-          <button class="btn btn-dark font-weight-bold float-right" disabled>
-            <fa-icon [icon]="faArrowAltCircleRight"></fa-icon> Voir
-          </button>
-        </div>
       </app-projet>
       <app-projet
         title="Site d'enchère"
         [technologies]="['php', 'html', 'css', 'javascript', 'mysql']"
+        (view)="redirectToEnchere()"
+        viewEnabled="true"
         >Site d'enchère permettant la vente de pigeons voyageurs.
-        <div class="mt-2">
-          <button
-            class="btn btn-dark font-weight-bold float-right"
-            (click)="redirectToEnchere()"
-          >
-            <fa-icon [icon]="faArrowAltCircleRight"></fa-icon> Voir
-          </button>
-        </div>
+      </app-projet>
+      <app-projet
+        title="Module d'interaction avec FreeNas"
+        [technologies]="['angular', 'electron', 'nodejs', 'html', 'css']"
+        repository="https://github.com/Spoutnik87/FSM"
+        >Application permettant d'interagir avec l'API de FreeNas pour afficher
+        l'état des disques durs et donne la possibilité de
+        verrouiller/déverrouiller les disques chiffrés.
       </app-projet>
       <app-projet
         title="Emulateur Chip8"
         [technologies]="['angular', 'nodejs', 'html', 'css']"
+        (view)="redirectToChip8()"
+        viewEnabled="true"
+        repository="https://github.com/Spoutnik87/portfolio/tree/master/src/app/chip8"
         >Chip8 est un langage de programmation interprété. Ce projet avait pour
         but de réaliser un émulateur pour ce langage en Javascript.
-        <div class="mt-2">
-          <button
-            class="btn btn-dark font-weight-bold float-right"
-            (click)="redirectToChip8()"
-          >
-            <fa-icon [icon]="faArrowAltCircleRight"></fa-icon> Voir
-          </button>
-        </div></app-projet
-      >
+      </app-projet>
     </div>
   </div>
   <hr />

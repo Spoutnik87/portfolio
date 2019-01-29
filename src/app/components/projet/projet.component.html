@@ -2,11 +2,28 @@
   <div class="card-body">
     <div class="card-title font-weight-bold ml-1">{{ title }}</div>
     <hr />
-    <div><ng-content></ng-content></div>
-    <div class="mt-2">
-      Ce projet a été développé en utilisant les technologies :
-      <div class="ml-3">
-        <app-technologies [names]="technologies"></app-technologies>
+    <div>
+      <ng-content></ng-content>
+      <div class="mt-2">
+        <a
+          class="btn btn-dark font-weight-bold float-right ml-2"
+          [href]="repository"
+          *ngIf="repository"
+          ><fa-icon [icon]="faGithub"></fa-icon> Accéder au code source</a
+        >
+        <button
+          class="btn btn-dark font-weight-bold float-right"
+          (click)="onView()"
+          *ngIf="viewEnabled"
+        >
+          <fa-icon [icon]="faArrowAltCircleRight"></fa-icon> Voir
+        </button>
+      </div>
+      <div class="mt-2">
+        Ce projet a été développé en utilisant les technologies :
+        <div class="ml-3">
+          <app-technologies [names]="technologies"></app-technologies>
+        </div>
       </div>
     </div>
   </div>

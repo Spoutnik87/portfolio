@@ -1,8 +1,5 @@
 import { Component } from "@angular/core";
-import {
-  faCode,
-  faArrowAltCircleRight
-} from "@fortawesome/free-solid-svg-icons";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
 import { Router } from "@angular/router";
 
 @Component({
@@ -11,7 +8,6 @@ import { Router } from "@angular/router";
 })
 export class ProjetsComponent {
   faCode = faCode;
-  faArrowAltCircleRight = faArrowAltCircleRight;
 
   constructor(private router: Router) {}
 

@@ -26,11 +26,7 @@ export class AProposComponent implements OnInit, OnDestroy {
         this.buildNumber = result.build.number;
         this.infoExists = true;
       },
-      error => {
-        console.log(
-          "Ceci est une version de développement. Les informations du build ne sont pas disponible."
-        );
-      }
+      () => {}
     );
   }
 
