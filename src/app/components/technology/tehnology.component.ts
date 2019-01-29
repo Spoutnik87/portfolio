@@ -81,7 +81,11 @@ export class TechnologyComponent implements OnChanges {
         break;
       case "javascript":
         this.faIcon = faJs;
-        this.techName = "Javascript";
+        this.techName = "JavaScript";
+        break;
+      case "electron":
+        this.faIcon = faJs;
+        this.techName = "Electron";
         break;
     }
   }
