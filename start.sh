@@ -11,7 +11,7 @@ pm2 start dist/app/server/main.js --name $APPLICATION_NAME --max-restarts 10  > 
 # Wait some seconds while the application is starting
 sleep 5
 
-RESTART=$(pm2 -m ls | grep "\-\- $APPLICATION_NAME" -A 6 | grep "restarted" | egrep -o "[0-9]+$")
+RESTART=$(pm2 -m ls | grep "\-\- $APPLICATION_NAME" -A 6 | grep "restarted" | egrep -o "[0-9]+")
 
 # Display logs
 pm2 logs $APPLICATION_NAME --nostream --lines 200
