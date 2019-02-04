@@ -8,4 +8,9 @@ import { faBriefcase, faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
 export class ExperienceComponent {
   faBriefcase = faBriefcase;
   faCalendarAlt = faCalendarAlt;
+
+  redirectToEnchere() {
+    document.location.href =
+      "http://www.pigeons-voyageurs-12r.com/enchere/index.php";
+  }
 }
