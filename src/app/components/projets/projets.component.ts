@@ -14,9 +14,4 @@ export class ProjetsComponent {
   redirectToChip8() {
     this.router.navigateByUrl("/chip8");
   }
-
-  redirectToEnchere() {
-    document.location.href =
-      "http://www.pigeons-voyageurs-12r.com/enchere/index.php";
-  }
 }
