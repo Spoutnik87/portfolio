@@ -17,6 +17,7 @@ import { ProgressBarComponent } from "./components/progress-bar/progress-bar.com
 import { TechnologyComponent } from "./components/technology/tehnology.component";
 import { TechnologiesComponent } from "./components/technologies/technologies.component";
 import { ProjetComponent } from "./components/projet/projet.component";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 const routes: Routes = [
   {
@@ -72,7 +73,13 @@ const routes: Routes = [
     TechnologiesComponent,
     ProjetComponent
   ],
-  imports: [RouterModule.forRoot(routes), CommonModule, FontAwesomeModule],
+  imports: [
+    RouterModule.forRoot(routes),
+    CommonModule,
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

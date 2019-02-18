@@ -1,8 +1,14 @@
 export class Chip8Program {
+  private name: string;
   private program: Uint8Array;
 
-  constructor(program: Uint8Array) {
+  constructor(name: string, program: Uint8Array) {
+    this.name = name;
     this.program = program;
+  }
+
+  public getName() {
+    return this.name;
   }
 
   /**

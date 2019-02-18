@@ -10,7 +10,7 @@ import { isPlatformBrowser } from "@angular/common";
 import { Chip8 } from "src/app/chip8/Chip8";
 import { Chip8Program } from "src/app/chip8/Chip8Program";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
-import { ConfigService } from "src/app/services";
+import { Chip8Service } from "src/app/services/chip8.service";
 
 @Component({
   selector: "app-chip8",
@@ -31,11 +31,23 @@ export class Chip8Component implements AfterViewInit, OnDestroy {
   chip8: Chip8;
   program: Chip8Program;
 
+  selectedProgram: string;
+  programs = [
+    {
+      name: "Chip8 Picture",
+      file: "Chip8 Picture.ch8"
+    }
+  ];
+
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    private configService: ConfigService
+    private chip8Service: Chip8Service
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
+  }
+
+  onChange(value) {
+    this.loadProgram(value);
   }
 
   ngAfterViewInit() {
@@ -43,18 +55,6 @@ export class Chip8Component implements AfterViewInit, OnDestroy {
       const canvas = this.screenCanvas.nativeElement;
       this.context = canvas.getContext("2d");
       this.screenInitialized = true;
-
-      const xhr = new XMLHttpRequest();
-      xhr.open(
-        "GET",
-        this.configService.getUrl() + "/assets/Chip8 Picture.ch8",
-        true
-      );
-      xhr.responseType = "arraybuffer";
-      xhr.onload = () => {
-        this.program = new Chip8Program(new Uint8Array(xhr.response));
-      };
-      xhr.send();
     }
   }
 
@@ -80,5 +80,10 @@ export class Chip8Component implements AfterViewInit, OnDestroy {
     }
   }
 
-  selectProgram(name: string) {}
+  loadProgram(name: string) {
+    this.stopEmulator();
+    this.chip8Service.getProgram(name).subscribe(program => {
+      this.program = program;
+    });
+  }
 }

@@ -5,7 +5,7 @@ import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app.routes";
 import { AppComponent } from "./app.component";
 import { HttpClientModule } from "@angular/common/http";
-import { ConfigService, InfoService } from "./services";
+import { services } from "./services";
 
 export const APP_ID = "portfolio";
 
@@ -17,7 +17,7 @@ export const APP_ID = "portfolio";
     HttpClientModule
   ],
   exports: [AppRoutingModule],
-  providers: [ConfigService, InfoService],
+  providers: [...services],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
