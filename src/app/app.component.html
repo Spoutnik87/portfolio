@@ -2,18 +2,10 @@
   <app-sidebar [state]="sidebarState" [innerWidth]="innerWidth"></app-sidebar>
   <span class="content">
     <button class="btn btn-dark" (click)="updateSidebar()">
-      <span
-        *ngIf="
-          (sidebarState !== 'A' && innerWidth > 768) ||
-          (sidebarState === 'C' && innerWidth <= 768)
-        "
+      <span *ngIf="(sidebarState !== 'A' && innerWidth > 768) || (sidebarState === 'C' && innerWidth <= 768)"
         ><fa-icon [icon]="faAngleDoubleRight"></fa-icon
       ></span>
-      <span
-        *ngIf="
-          (sidebarState === 'B' && innerWidth <= 768) ||
-          (sidebarState === 'A' && innerWidth > 768)
-        "
+      <span *ngIf="(sidebarState === 'B' && innerWidth <= 768) || (sidebarState === 'A' && innerWidth > 768)"
         ><fa-icon [icon]="faAngleDoubleLeft"></fa-icon
       ></span>
     </button>

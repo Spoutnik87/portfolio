@@ -1,4 +1,4 @@
-import { Chip8Program } from "./Chip8Program";
+import { Chip8Program } from './Chip8Program';
 
 export class Chip8Memory {
   private memory: Uint8Array;
@@ -83,7 +83,7 @@ export class Chip8Memory {
     0x80,
     0xf0,
     0x80,
-    0x80
+    0x80,
   ];
 
   constructor() {

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  url: "https://spout.cc"
+  url: 'https://spout.cc',
 };

@@ -1,28 +1,19 @@
-import {
-  Component,
-  OnInit,
-  HostListener,
-  Inject,
-  PLATFORM_ID
-} from "@angular/core";
-import { fadeAnimation } from "./animation";
-import {
-  faAngleDoubleRight,
-  faAngleDoubleLeft
-} from "@fortawesome/free-solid-svg-icons";
-import { isPlatformBrowser } from "@angular/common";
+import { isPlatformBrowser } from '@angular/common';
+import { Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
+import { fadeAnimation } from './animation';
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"],
-  animations: [fadeAnimation]
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  animations: [fadeAnimation],
 })
 export class AppComponent implements OnInit {
   faAngleDoubleRight = faAngleDoubleRight;
   faAngleDoubleLeft = faAngleDoubleLeft;
 
-  sidebarState = "C";
+  sidebarState = 'C';
 
   innerWidth;
 
@@ -43,7 +34,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  @HostListener("window:resize")
+  @HostListener('window:resize')
   onResize() {
     this.innerWidth = window.innerWidth;
     this.refreshSidebar();
@@ -51,42 +42,42 @@ export class AppComponent implements OnInit {
 
   refreshSidebar(firstInit: boolean = false) {
     if (this.innerWidth > 768) {
-      if (this.sidebarState === "C") {
+      if (this.sidebarState === 'C') {
         if (firstInit) {
-          this.sidebarState = "A";
+          this.sidebarState = 'A';
         } else {
-          this.sidebarState = "B";
+          this.sidebarState = 'B';
         }
-      } else if (this.sidebarState === "B") {
-        this.sidebarState = "A";
+      } else if (this.sidebarState === 'B') {
+        this.sidebarState = 'A';
       }
     } else {
-      if (this.sidebarState === "A") {
-        this.sidebarState = "B";
-      } else if (this.sidebarState === "C" && firstInit) {
-        this.sidebarState = "B";
+      if (this.sidebarState === 'A') {
+        this.sidebarState = 'B';
+      } else if (this.sidebarState === 'C' && firstInit) {
+        this.sidebarState = 'B';
       }
     }
   }
 
   updateSidebar() {
-    if (this.sidebarState === "A") {
+    if (this.sidebarState === 'A') {
       if (this.innerWidth > 768) {
-        this.sidebarState = "B";
+        this.sidebarState = 'B';
       } else {
-        this.sidebarState = "B";
+        this.sidebarState = 'B';
       }
-    } else if (this.sidebarState === "B") {
+    } else if (this.sidebarState === 'B') {
       if (this.innerWidth > 768) {
-        this.sidebarState = "A";
+        this.sidebarState = 'A';
       } else {
-        this.sidebarState = "C";
+        this.sidebarState = 'C';
       }
     } else {
       if (this.innerWidth > 768) {
-        this.sidebarState = "A";
+        this.sidebarState = 'A';
       } else {
-        this.sidebarState = "B";
+        this.sidebarState = 'B';
       }
     }
   }

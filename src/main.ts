@@ -1,12 +1,12 @@
-import "hammerjs";
+import 'hammerjs';
 
-import { ApplicationRef, NgModuleRef, enableProdMode } from "@angular/core";
-import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+import { enableProdMode, ApplicationRef, NgModuleRef } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { createNewHosts } from "@angularclass/hmr";
+import { createNewHosts } from '@angularclass/hmr';
 
-import { AppBrowserModule } from "./app/app.browser.module";
-import { environment } from "./environments/environment";
+import { AppBrowserModule } from './app/app.browser.module';
+import { environment } from './environments/environment';
 
 if (environment.production) {
   enableProdMode();
@@ -46,12 +46,12 @@ function bootstrapWithHmr(boot: () => Promise<NgModuleRef<any>>) {
 
 function main() {
   bootstrap(() => platformBrowserDynamic().bootstrapModule(AppBrowserModule))
-    .then(ngModule => console.log("AppModule boostraped!"))
+    .then(ngModule => console.log('AppModule boostraped!'))
     .catch(console.error);
 }
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", main);
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', main);
 } else {
   main();
 }

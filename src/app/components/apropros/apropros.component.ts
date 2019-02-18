@@ -1,16 +1,18 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { faQuestion } from "@fortawesome/free-solid-svg-icons";
-import { InfoService } from "src/app/services";
-import { Subscription } from "rxjs";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faQuestion } from '@fortawesome/free-solid-svg-icons';
+import { Subscription } from 'rxjs';
+import { InfoService } from 'src/app/services';
 
 @Component({
-  selector: "app-apropos",
-  templateUrl: "./apropos.component.html"
+  selector: 'app-apropos',
+  templateUrl: './apropos.component.html',
 })
 export class AProposComponent implements OnInit, OnDestroy {
   faQuestion = faQuestion;
-  technologies = ["angular", "nodejs", "html", "css"];
-  technologiesDepl = ["jenkins"];
+  faGithub = faGithub;
+  technologies = ['angular', 'nodejs', 'html', 'css'];
+  technologiesDepl = ['jenkins'];
 
   subscription: Subscription;
   infoExists = false;

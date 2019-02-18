@@ -11,7 +11,7 @@ module.exports = {
     'src/tsconfig.server.json',
     'src/index.html',
     'src/main.server.ts',
-    'tsconfg.json'
+    'tsconfg.json',
   ],
   logger: console,
 
