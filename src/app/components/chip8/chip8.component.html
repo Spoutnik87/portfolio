@@ -1,39 +1,22 @@
 <div class="container">
   <div class="card">
-    <h2 class="card-header">
-      <fa-icon [icon]="faCode"></fa-icon> Emulateur Chip8
-    </h2>
+    <h2 class="card-header"><fa-icon [icon]="faCode"></fa-icon> Emulateur Chip8</h2>
     <div class="card-body row">
       <div class="col-lg-3 col-xl-5">
         Choisissez le programme :
-        <select
-          class="form-control custom-select mt-2"
-          [(ngModel)]="selectedProgram"
-          (change)="onChange($event.target.value)"
-          required
-        >
-          <option *ngFor="let program of programs" [value]="program.file">{{
-            program.name
-          }}</option>
+        <select class="form-control custom-select mt-2" [(ngModel)]="selectedProgram" (change)="onChange($event.target.value)" required>
+          <option *ngFor="let program of programs" [value]="program.file">{{ program.name }}</option>
         </select>
       </div>
       <div class="text-center mb-2 col-lg-9 col-xl-7 mt-3">
         <div class="row">
           <div class="col-sm-6 mt-3">
-            <button
-              class="btn btn-dark mr-2 w-100"
-              (click)="startEmulator()"
-              [disabled]="!program"
-            >
+            <button class="btn btn-dark mr-2 w-100" (click)="startEmulator()" [disabled]="!program">
               Démarrer l'émulateur
             </button>
           </div>
           <div class="col-sm-6 mt-3">
-            <button
-              class="btn btn-dark ml-2 w-100"
-              (click)="stopEmulator()"
-              [disabled]="!program"
-            >
+            <button class="btn btn-dark ml-2 w-100" (click)="stopEmulator()" [disabled]="!program">
               Arrêter l'émulateur
             </button>
           </div>

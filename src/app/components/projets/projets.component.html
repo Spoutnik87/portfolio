@@ -2,32 +2,22 @@
   <div class="card">
     <h2 class="card-header"><fa-icon [icon]="faCode"></fa-icon> Mes projets</h2>
     <div class="card-body">
-      <app-projet
-        title="Application de growth hacking"
-        [technologies]="['react', 'nodejs', 'html', 'css', 'mongodb', 'docker']"
-        >Une application de growth hacking est une application qui permet
-        d'accroitre la visibilité d'une entreprise sur les réseaux sociaux. Ce
-        projet se concentre sur Twitter et offre la possibilité aux utilisateurs
-        d'automatiser le fonctionnement de leurs compte Twitter en fonction de
-        paramètres prédéfinis. (exemple : retweet des messages contenant le mot
-        "croissance"). Techniquement, ce projet est composé de 3 modules :
-        <br />- Une application web permettant à l'utilisateur de configurer le
-        comportement du compte. <br />
-        - Un module interpretant la configuration et communiquant avec l'API de
-        Twitter pour effectuer des actions. (tweet, retweet, favoris...) <br />-
-        Une API REST servant d'interface entre les deux autres modules et la
-        base de données. <br />
-        Afin de faciliter la mise en production, l'orchestration de ces
-        différents modules est effectué à l'aide de Docker. <br />Actuellement,
-        ce projet n'est pas en production, cependant une demo sera bientôt
-        disponible.
+      <app-projet title="Application de growth hacking" [technologies]="['react', 'nodejs', 'html', 'css', 'mongodb', 'docker']"
+        >Une application de growth hacking est une application qui permet d'accroitre la visibilité d'une entreprise sur les réseaux
+        sociaux. Ce projet se concentre sur Twitter et offre la possibilité aux utilisateurs d'automatiser le fonctionnement de leurs compte
+        Twitter en fonction de paramètres prédéfinis. (exemple : retweet des messages contenant le mot "croissance"). Techniquement, ce
+        projet est composé de 3 modules : <br />- Une application web permettant à l'utilisateur de configurer le comportement du compte.
+        <br />
+        - Un module interpretant la configuration et communiquant avec l'API de Twitter pour effectuer des actions. (tweet, retweet,
+        favoris...) <br />- Une API REST servant d'interface entre les deux autres modules et la base de données. <br />
+        Afin de faciliter la mise en production, l'orchestration de ces différents modules est effectué à l'aide de Docker.
+        <br />Actuellement, ce projet n'est pas en production, cependant une demo sera bientôt disponible.
       </app-projet>
       <app-projet
         title="Module d'interaction avec FreeNas"
         [technologies]="['angular', 'electron', 'nodejs', 'html', 'css']"
         repository="https://github.com/Spoutnik87/FSM"
-        >Application permettant d'interagir avec l'API de FreeNas pour afficher
-        l'état des disques durs et donne la possibilité de
+        >Application permettant d'interagir avec l'API de FreeNas pour afficher l'état des disques durs et donne la possibilité de
         verrouiller/déverrouiller les disques chiffrés.
       </app-projet>
       <app-projet
@@ -36,8 +26,7 @@
         (view)="redirectToChip8()"
         viewEnabled="true"
         repository="https://github.com/Spoutnik87/portfolio/tree/master/src/app/chip8"
-        >Chip8 est un langage de programmation interprété. Ce projet avait pour
-        but de réaliser un émulateur pour ce langage en Javascript.
+        >Chip8 est un langage de programmation interprété. Ce projet avait pour but de réaliser un émulateur pour ce langage en Javascript.
       </app-projet>
     </div>
   </div>

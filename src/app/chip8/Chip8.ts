@@ -1,9 +1,9 @@
-import { Chip8Processor } from "./Chip8Processor";
-import { Chip8Memory } from "./Chip8Memory";
-import { Chip8Screen } from "./Chip8Screen";
-import { Chip8Program } from "./Chip8Program";
-import { Chip8Keyboard } from "./Chip8Keyboard";
-import { sleep } from "./functions";
+import { Chip8Keyboard } from './Chip8Keyboard';
+import { Chip8Memory } from './Chip8Memory';
+import { Chip8Processor } from './Chip8Processor';
+import { Chip8Program } from './Chip8Program';
+import { Chip8Screen } from './Chip8Screen';
+import { sleep } from './functions';
 
 export class Chip8 {
   private processor: Chip8Processor;
@@ -81,9 +81,9 @@ export class Chip8 {
     for (let y = 0; y < 32; y++) {
       for (let x = 0; x < 64; x++) {
         if (this.screen.get(x, y)) {
-          this.context.fillStyle = "#000000";
+          this.context.fillStyle = '#000000';
         } else {
-          this.context.fillStyle = "#808080";
+          this.context.fillStyle = '#808080';
         }
         this.context.fillRect(x * scale, y * scale, scale, scale);
       }

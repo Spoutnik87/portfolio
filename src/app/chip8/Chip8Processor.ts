@@ -1,9 +1,9 @@
-import { Chip8OpCode, Chip8OpCodeType } from "./Chip8OpCode";
-import { Chip8 } from "./Chip8";
-import { Chip8Memory } from "./Chip8Memory";
-import { Chip8Screen } from "./Chip8Screen";
-import { Chip8Keyboard } from "./Chip8Keyboard";
-import { getRandomIntInclusive } from "../functions/functions";
+import { getRandomIntInclusive } from '../functions/functions';
+import { Chip8 } from './Chip8';
+import { Chip8Keyboard } from './Chip8Keyboard';
+import { Chip8Memory } from './Chip8Memory';
+import { Chip8OpCode, Chip8OpCodeType } from './Chip8OpCode';
+import { Chip8Screen } from './Chip8Screen';
 
 export class Chip8Processor {
   private memory: Chip8Memory;
@@ -77,10 +77,7 @@ export class Chip8Processor {
         }
         break;
       case Chip8OpCodeType.SEVxVy:
-        if (
-          this.vRegisters[opCode.getParam(0)] ===
-          this.vRegisters[opCode.getParam(1)]
-        ) {
+        if (this.vRegisters[opCode.getParam(0)] === this.vRegisters[opCode.getParam(1)]) {
           this.programCounter += 2;
         }
         break;
@@ -94,40 +91,25 @@ export class Chip8Processor {
         }
         break;
       case Chip8OpCodeType.LDVxVy:
-        this.vRegisters[opCode.getParam(0)] = this.vRegisters[
-          opCode.getParam(1)
-        ];
+        this.vRegisters[opCode.getParam(0)] = this.vRegisters[opCode.getParam(1)];
         break;
       case Chip8OpCodeType.ORVxVy:
-        this.vRegisters[opCode.getParam(0)] |= this.vRegisters[
-          opCode.getParam(1)
-        ];
+        this.vRegisters[opCode.getParam(0)] |= this.vRegisters[opCode.getParam(1)];
         break;
       case Chip8OpCodeType.ANDVxVy:
-        this.vRegisters[opCode.getParam(0)] &= this.vRegisters[
-          opCode.getParam(1)
-        ];
+        this.vRegisters[opCode.getParam(0)] &= this.vRegisters[opCode.getParam(1)];
         break;
       case Chip8OpCodeType.XORVxVy:
-        this.vRegisters[opCode.getParam(0)] ^= this.vRegisters[
-          opCode.getParam(1)
-        ];
+        this.vRegisters[opCode.getParam(0)] ^= this.vRegisters[opCode.getParam(1)];
         break;
       case Chip8OpCodeType.ADDVxVy:
-        const tmp =
-          this.vRegisters[opCode.getParam(0)] +
-          this.vRegisters[opCode.getParam(1)];
+        const tmp = this.vRegisters[opCode.getParam(0)] + this.vRegisters[opCode.getParam(1)];
         this.vRegisters[opCode.getParam(0)] = tmp & 0xff;
         this.vRegisters[0xf] = +(tmp > 255);
         break;
       case Chip8OpCodeType.SUBVxVy:
-        this.vRegisters[0xf] = +(
-          this.vRegisters[opCode.getParam(0)] >
-          this.vRegisters[opCode.getParam(1)]
-        );
-        this.vRegisters[opCode.getParam(0)] -= this.vRegisters[
-          opCode.getParam(1)
-        ];
+        this.vRegisters[0xf] = +(this.vRegisters[opCode.getParam(0)] > this.vRegisters[opCode.getParam(1)]);
+        this.vRegisters[opCode.getParam(0)] -= this.vRegisters[opCode.getParam(1)];
         if (this.vRegisters[opCode.getParam(0)] < 0) {
           this.vRegisters[opCode.getParam(0)] += 256;
         }
@@ -137,13 +119,8 @@ export class Chip8Processor {
         this.vRegisters[opCode.getParam(0)] >>= 1;
         break;
       case Chip8OpCodeType.SUBNVxVy:
-        this.vRegisters[0xf] = +(
-          this.vRegisters[opCode.getParam(1)] >
-          this.vRegisters[opCode.getParam(0)]
-        );
-        this.vRegisters[opCode.getParam(0)] =
-          this.vRegisters[opCode.getParam(1)] -
-          this.vRegisters[opCode.getParam(0)];
+        this.vRegisters[0xf] = +(this.vRegisters[opCode.getParam(1)] > this.vRegisters[opCode.getParam(0)]);
+        this.vRegisters[opCode.getParam(0)] = this.vRegisters[opCode.getParam(1)] - this.vRegisters[opCode.getParam(0)];
         if (this.vRegisters[opCode.getParam(0)] < 0) {
           this.vRegisters[opCode.getParam(0)] += 256;
         }
@@ -156,10 +133,7 @@ export class Chip8Processor {
         }
         break;
       case Chip8OpCodeType.SNEVxVy:
-        if (
-          this.vRegisters[opCode.getParam(0)] !==
-          this.vRegisters[opCode.getParam(1)]
-        ) {
+        if (this.vRegisters[opCode.getParam(0)] !== this.vRegisters[opCode.getParam(1)]) {
           this.programCounter += 2;
         }
         break;
@@ -170,8 +144,7 @@ export class Chip8Processor {
         this.programCounter = opCode.getParam(0) + this.vRegisters[0];
         break;
       case Chip8OpCodeType.RNDVxByte:
-        this.vRegisters[opCode.getParam(0)] =
-          getRandomIntInclusive(0, 255) & opCode.getParam(1);
+        this.vRegisters[opCode.getParam(0)] = getRandomIntInclusive(0, 255) & opCode.getParam(1);
         break;
       case Chip8OpCodeType.DRWVxVyNibble:
         this.screen.setUpdated(true);
@@ -197,11 +170,7 @@ export class Chip8Processor {
           }
         }
         // Updating screen.
-        this.screen.setLines(
-          this.vRegisters[opCode.getParam(0)],
-          this.vRegisters[opCode.getParam(1)],
-          xoredScreen
-        );
+        this.screen.setLines(this.vRegisters[opCode.getParam(0)], this.vRegisters[opCode.getParam(1)], xoredScreen);
         break;
       case Chip8OpCodeType.SKPVx:
         if (this.keyboard.getKey(opCode.getParam(0))) {
@@ -282,9 +251,7 @@ export class Chip8Processor {
   }
 
   public tick(): void {
-    const opCode =
-      (this.memory.get(this.programCounter) << 8) |
-      this.memory.get(this.programCounter + 1);
+    const opCode = (this.memory.get(this.programCounter) << 8) | this.memory.get(this.programCounter + 1);
 
     this.processOpCode(new Chip8OpCode(opCode));
   }

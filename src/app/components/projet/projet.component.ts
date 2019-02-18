@@ -1,10 +1,10 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
-import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: "app-projet",
-  templateUrl: "./projet.component.html"
+  selector: 'app-projet',
+  templateUrl: './projet.component.html',
 })
 export class ProjetComponent {
   faArrowAltCircleRight = faArrowAltCircleRight;

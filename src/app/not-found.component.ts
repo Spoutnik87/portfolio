@@ -1,22 +1,14 @@
-import {
-  Component,
-  OnInit,
-  Optional,
-  PLATFORM_ID,
-  APP_ID,
-  Inject
-} from "@angular/core";
-import { isPlatformServer } from "@angular/common";
-import { RESPONSE } from "@nguniversal/express-engine/tokens";
+import { isPlatformServer } from '@angular/common';
+import { APP_ID, Component, Inject, OnInit, Optional, PLATFORM_ID } from '@angular/core';
+import { RESPONSE } from '@nguniversal/express-engine/tokens';
 
 interface PartialResponse {
   status(code: number): this;
 }
 
 @Component({
-  selector: "app-not-found",
-  template:
-    "<div class='container'><h1>La page que vous avez demandée n'existe pas</h1></div>"
+  selector: 'app-not-found',
+  template: "<div class='container'><h1>La page que vous avez demandée n'existe pas</h1></div>",
 })
 export class NotFoundComponent implements OnInit {
   constructor(

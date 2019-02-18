@@ -1,27 +1,20 @@
-import {
-  Component,
-  ViewChild,
-  AfterViewInit,
-  Inject,
-  PLATFORM_ID,
-  OnDestroy
-} from "@angular/core";
-import { isPlatformBrowser } from "@angular/common";
-import { Chip8 } from "src/app/chip8/Chip8";
-import { Chip8Program } from "src/app/chip8/Chip8Program";
-import { faCode } from "@fortawesome/free-solid-svg-icons";
-import { Chip8Service } from "src/app/services/chip8.service";
+import { isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, Component, Inject, OnDestroy, PLATFORM_ID, ViewChild } from '@angular/core';
+import { faCode } from '@fortawesome/free-solid-svg-icons';
+import { Chip8 } from 'src/app/chip8/Chip8';
+import { Chip8Program } from 'src/app/chip8/Chip8Program';
+import { Chip8Service } from 'src/app/services/chip8.service';
 
 @Component({
-  selector: "app-chip8",
-  templateUrl: "./chip8.component.html",
-  styleUrls: ["./chip8.component.css"]
+  selector: 'app-chip8',
+  templateUrl: './chip8.component.html',
+  styleUrls: ['./chip8.component.css'],
 })
 export class Chip8Component implements AfterViewInit, OnDestroy {
   faCode = faCode;
   isBrowser: boolean;
 
-  @ViewChild("screen")
+  @ViewChild('screen')
   screenCanvas;
 
   context: CanvasRenderingContext2D;
@@ -34,15 +27,12 @@ export class Chip8Component implements AfterViewInit, OnDestroy {
   selectedProgram: string;
   programs = [
     {
-      name: "Chip8 Picture",
-      file: "Chip8 Picture.ch8"
-    }
+      name: 'Chip8 Picture',
+      file: 'Chip8 Picture.ch8',
+    },
   ];
 
-  constructor(
-    @Inject(PLATFORM_ID) private platformId: Object,
-    private chip8Service: Chip8Service
-  ) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private chip8Service: Chip8Service) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
@@ -53,7 +43,7 @@ export class Chip8Component implements AfterViewInit, OnDestroy {
   ngAfterViewInit() {
     if (this.isBrowser) {
       const canvas = this.screenCanvas.nativeElement;
-      this.context = canvas.getContext("2d");
+      this.context = canvas.getContext('2d');
       this.screenInitialized = true;
     }
   }

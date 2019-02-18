@@ -1,25 +1,25 @@
-import { Component, Input, OnChanges, SimpleChanges } from "@angular/core";
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import {
-  faPhp,
-  faNodeJs,
+  faAndroid,
   faAngular,
-  faReact,
-  faJenkins,
-  faJava,
+  faCss3,
   faDocker,
   faHtml5,
-  faCss3,
-  faAndroid,
+  faJava,
+  faJenkins,
   faJs,
-  IconDefinition
-} from "@fortawesome/free-brands-svg-icons";
+  faNodeJs,
+  faPhp,
+  faReact,
+  IconDefinition,
+} from '@fortawesome/free-brands-svg-icons';
 
-import { faDatabase } from "@fortawesome/free-solid-svg-icons";
+import { faDatabase } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: "app-technology",
-  templateUrl: "./technology.component.html",
-  styleUrls: ["./technology.component.css"]
+  selector: 'app-technology',
+  templateUrl: './technology.component.html',
+  styleUrls: ['./technology.component.css'],
 })
 export class TechnologyComponent implements OnChanges {
   @Input()
@@ -31,61 +31,61 @@ export class TechnologyComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     switch (changes.name.currentValue) {
-      case "php":
+      case 'php':
         this.faIcon = faPhp;
-        this.techName = "PHP";
+        this.techName = 'PHP';
         break;
-      case "nodejs":
+      case 'nodejs':
         this.faIcon = faNodeJs;
-        this.techName = "NodeJS";
+        this.techName = 'NodeJS';
         break;
-      case "angular":
+      case 'angular':
         this.faIcon = faAngular;
-        this.techName = "Angular";
+        this.techName = 'Angular';
         break;
-      case "react":
+      case 'react':
         this.faIcon = faReact;
-        this.techName = "React";
+        this.techName = 'React';
         break;
-      case "jenkins":
+      case 'jenkins':
         this.faIcon = faJenkins;
-        this.techName = "Jenkins";
+        this.techName = 'Jenkins';
         break;
-      case "java":
+      case 'java':
         this.faIcon = faJava;
-        this.techName = "Java";
+        this.techName = 'Java';
         break;
-      case "docker":
+      case 'docker':
         this.faIcon = faDocker;
-        this.techName = "Docker";
+        this.techName = 'Docker';
         break;
-      case "html":
+      case 'html':
         this.faIcon = faHtml5;
-        this.techName = "HTML5";
+        this.techName = 'HTML5';
         break;
-      case "css":
+      case 'css':
         this.faIcon = faCss3;
-        this.techName = "CSS3";
+        this.techName = 'CSS3';
         break;
-      case "android":
+      case 'android':
         this.faIcon = faAndroid;
-        this.techName = "Android";
+        this.techName = 'Android';
         break;
-      case "mongodb":
+      case 'mongodb':
         this.faIcon = faDatabase;
-        this.techName = "MongoDB";
+        this.techName = 'MongoDB';
         break;
-      case "mysql":
+      case 'mysql':
         this.faIcon = faDatabase;
-        this.techName = "MySQL";
+        this.techName = 'MySQL';
         break;
-      case "javascript":
+      case 'javascript':
         this.faIcon = faJs;
-        this.techName = "JavaScript";
+        this.techName = 'JavaScript';
         break;
-      case "electron":
+      case 'electron':
         this.faIcon = faJs;
-        this.techName = "Electron";
+        this.techName = 'Electron';
         break;
     }
   }
