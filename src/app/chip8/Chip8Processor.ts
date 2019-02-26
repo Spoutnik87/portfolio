@@ -20,7 +20,7 @@ export class Chip8Processor {
   private stackPointer: number;
 
   // 16 bytes stack
-  private stack: Uint8Array;
+  private stack: Array<number>;
 
   // 2 bytes value
   private programCounter: number;
@@ -42,7 +42,7 @@ export class Chip8Processor {
     this.vRegisters = new Uint8Array(16);
     this.iRegister = 0;
     this.stackPointer = 0;
-    this.stack = new Uint8Array(16);
+    this.stack = new Array(16);
     this.programCounter = 0x200;
 
     this.delayTimer = 0;
@@ -252,7 +252,6 @@ export class Chip8Processor {
 
   public tick(): void {
     const opCode = (this.memory.get(this.programCounter) << 8) | this.memory.get(this.programCounter + 1);
-
     this.processOpCode(new Chip8OpCode(opCode));
   }
 

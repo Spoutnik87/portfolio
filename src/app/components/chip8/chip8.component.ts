@@ -30,6 +30,18 @@ export class Chip8Component implements AfterViewInit, OnDestroy {
       name: 'Chip8 Picture',
       file: 'Chip8 Picture.ch8',
     },
+    {
+      name: 'IBM Logo',
+      file: 'IBM Logo.ch8',
+    },
+    {
+      name: 'Pong',
+      file: 'Pong.ch8',
+    },
+    {
+      name: 'demo',
+      file: 'demo.ch8',
+    },
   ];
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private chip8Service: Chip8Service) {
