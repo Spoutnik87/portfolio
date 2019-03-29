@@ -2,7 +2,10 @@
   <div class="card">
     <h2 class="card-header"><fa-icon [icon]="faCode"></fa-icon> Mes projets</h2>
     <div class="card-body">
-      <app-projet title="Application de growth hacking" [technologies]="['react', 'nodejs', 'html', 'css', 'mongodb', 'docker']"
+      <app-projet
+        title="Application de growth hacking"
+        [technologies]="['react', 'nodejs', 'html', 'css', 'mongodb', 'docker']"
+        repository="https://github.com/Spoutnik87/hubgine_web"
         >Une application de growth hacking est une application qui permet d'accroitre la visibilité d'une entreprise sur les réseaux
         sociaux. Ce projet se concentre sur Twitter et offre la possibilité aux utilisateurs d'automatiser le fonctionnement de leurs compte
         Twitter en fonction de paramètres prédéfinis. (exemple : retweet des messages contenant le mot "croissance"). Techniquement, ce
@@ -11,7 +14,8 @@
         - Un module interpretant la configuration et communiquant avec l'API de Twitter pour effectuer des actions. (tweet, retweet,
         favoris...) <br />- Une API REST servant d'interface entre les deux autres modules et la base de données. <br />
         Afin de faciliter la mise en production, l'orchestration de ces différents modules est effectué à l'aide de Docker.
-        <br />Actuellement, ce projet n'est pas en production, cependant une demo sera bientôt disponible.
+        <br />Actuellement, ce projet n'est pas en production, cependant une demo sera bientôt disponible. Le code source de l'application
+        web est disponible.
       </app-projet>
       <app-projet
         title="Module d'interaction avec FreeNas"
