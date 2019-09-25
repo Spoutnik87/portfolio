@@ -21,14 +21,14 @@ a:focus {
 
 .sidebar-header {
   padding: 20px;
-  background: #293133;
+  background-color: #293133;
+  color: #ffffff;
 }
 
 .sidebar {
   min-width: 300px;
   max-width: 300px;
-  background: #343a40;
-  color: #fff;
+  background-color: #343a40;
   transition: all 0.3s;
   height: 100%;
 }
@@ -37,11 +37,12 @@ a:focus {
   padding: 10px;
   font-size: 1.1em;
   display: block;
+  color: #fff;
 }
 
 .sidebar ul li a:hover {
   color: #2a2a2e;
-  background: #fff;
+  background-color: #fff;
 }
 
 .sidebar-small {
@@ -57,4 +58,9 @@ a:focus {
 
 .sidebar-small-hidden {
   margin-left: -80px;
+}
+
+.active {
+  background-color: #ffffff;
+  color: #2a2a2e !important;
 }
