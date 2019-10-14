@@ -14,7 +14,7 @@ export class Chip8Component implements AfterViewInit, OnDestroy {
   faCode = faCode;
   isBrowser: boolean;
 
-  @ViewChild('screen')
+  @ViewChild('screen', {static: false})
   screenCanvas;
 
   context: CanvasRenderingContext2D;
